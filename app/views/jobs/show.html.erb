@@ -1,5 +1,6 @@
 <h2><%= @job.title %></h2>
 <span class="featured-job"><%= "Vaga em Destaque!" if @job.featured %></span>
+<span class="expired-job"><%= "Vaga expirada!" if @job.expired? %></span>
 <hr>
 <span class="response"><%= notice %></span>
 <div class="job-details">

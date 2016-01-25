@@ -114,4 +114,24 @@ feature 'Visitor visits homepage' do
     expect(page).not_to have_content "Premium!!!"
   end
 
+  scenario "and doesn\'t see expired jobs" do
+    travel_to 90.days.ago do
+      category = Category.create!(name: "sales")
+      company = Company.create!(name: "McDonalds",
+                               location: "Arizona",
+                               email: "mc@donald.com",
+                               phone: "1-548-859-6544")
+      job = Job.create!(title: "Sales manager",
+                        location: "New Mexico",
+                        category: category,
+                        company: company,
+                        description: "A simple job for a simple person.")
+    end
+
+    expect(Job.last).to be_expired
+    visit root_path
+    expect(page).not_to have_content "Sales manager"
+    expect(page).not_to have_content "New Mexico"
+  end
+
 end

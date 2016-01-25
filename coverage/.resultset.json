@@ -14,9 +14,9 @@
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/home_controller.rb": [
         1,
         1,
-        21,
-        21,
-        21,
+        22,
+        22,
+        22,
         null,
         null
       ],
@@ -36,6 +36,14 @@
         1,
         23,
         null,
+        null,
+        1,
+        9,
+        null,
+        null,
+        1,
+        22,
+        null,
         null
       ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/company.rb": [
@@ -44,7 +52,7 @@
         1,
         null,
         1,
-        17,
+        18,
         null,
         null
       ],
@@ -164,7 +172,7 @@
         null,
         null,
         1,
-        11,
+        12,
         null,
         null,
         1,
@@ -173,6 +181,6 @@
         null
       ]
     },
-    "timestamp": 1453760508
+    "timestamp": 1453761977
   }
 }
