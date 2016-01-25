@@ -4,6 +4,7 @@
       <p><b>Título:</b> <%= job.title %></p>
       <p><b>Localização:</b> <%= job.location %></p>
       <p><b>Empresa:</b> <%= job.company %></p>
+      <%= link_to 'Ver mais', job_path(job) %>
     </div>
   <% end %>
 </div>

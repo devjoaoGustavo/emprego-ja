@@ -17,4 +17,13 @@ feature 'Visitor visits hompage' do
     expect(page).to have_content job.company
   end
 
+  scenario "and sees \'See More\' button" do
+    job = Job.create(title: "Developer Ruby Junior",
+                     location: "San Francisco",
+                     company: "Xerox")
+    visit root_path
+    click_on 'Ver mais'
+    expect(current_path).to eq job_path(job)
+  end
+
 end
