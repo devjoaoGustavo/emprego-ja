@@ -1,0 +1,9 @@
+<div class="jobs">
+  <% @jobs.each do |job| %>
+    <div class="job">
+      <p><b>Título:</b> <%= job.title %></p>
+      <p><b>Localização:</b> <%= job.location %></p>
+      <p><b>Empresa:</b> <%= job.company %></p>
+    </div>
+  <% end %>
+</div>
