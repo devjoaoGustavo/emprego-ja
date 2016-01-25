@@ -23,4 +23,11 @@ feature "User creates a new company" do
     expect(page).to have_content "Empresa criada com sucesso."
 
   end
+
+  scenario 'unsuccessfully' do
+    visit root_path
+    click_on 'Nova Empresa'
+    click_on 'Criar empresa'
+    expect(page).to have_content "Erro! Nenhum dos campos pode ser vazio."
+  end
 end

@@ -1,5 +1,6 @@
 <h2>Nova Empresa</h2>
 <hr>
+<span class="response"><%= flash[:error] %></span>
 <div class="form">
   <%= form_for(@company) do |f| %>
     <p><%= f.label :name %><br>

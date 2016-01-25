@@ -8,8 +8,13 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.create(company_params)
-    redirect_to @company, notice: "Empresa criada com sucesso."
+    @company = Company.new(company_params)
+    if @company.save
+      redirect_to @company, notice: "Empresa criada com sucesso."
+    else
+      flash[:error] = "Erro! Nenhum dos campos pode ser vazio."
+      render :new
+    end
   end
 
   private
