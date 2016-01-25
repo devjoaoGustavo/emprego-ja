@@ -1,0 +1,16 @@
+<h2>Nova Empresa</h2>
+<hr>
+<div class="form">
+  <%= form_for(@company) do |f| %>
+    <p><%= f.label :name %><br>
+    <%= f.text_field :name %></p>
+    <p><%= f.label :location %><br>
+    <%= f.text_field :location %></p>
+    <p><%= f.label :email %><br>
+    <%= f.text_field :email %></p>
+    <p><%= f.label :phone %><br>
+    <%= f.text_field :phone %></p>
+    <%= f.submit 'Criar empresa' %>
+  <% end %>
+</div>
+<%= link_to 'Voltar', root_path %>
