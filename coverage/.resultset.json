@@ -14,9 +14,9 @@
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/home_controller.rb": [
         1,
         1,
-        19,
-        19,
-        19,
+        21,
+        21,
+        21,
         null,
         null
       ],
@@ -34,7 +34,7 @@
         1,
         null,
         1,
-        10,
+        23,
         null,
         null
       ],
@@ -42,6 +42,10 @@
         1,
         1,
         1,
+        null,
+        1,
+        17,
+        null,
         null
       ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/categories_controller.rb": [
@@ -169,6 +173,6 @@
         null
       ]
     },
-    "timestamp": 1453759693
+    "timestamp": 1453760508
   }
 }

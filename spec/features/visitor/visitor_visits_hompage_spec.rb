@@ -62,7 +62,7 @@ feature 'Visitor visits homepage' do
     expect(page).to have_content "Nova Vaga!!!"
   end
 
-  scenario 'and doesn\'t see old jobs featured' do
+  scenario "and doesn\'t see old jobs featured" do
     travel_to 6.days.ago do
       category = Category.create!(name: "sales")
       company = Company.create!(name: "McDonalds",
@@ -77,6 +77,41 @@ feature 'Visitor visits homepage' do
     end
     visit root_path
     expect(page).not_to have_content "Nova Vaga!!!"
+  end
+
+  scenario 'and sees a premium company featured' do
+    company = Company.create!(name: "McDonalds",
+                             location: "Arizona",
+                             email: "mc@donald.com",
+                             phone: "1-123-859-6544")
+    10.times do |i|
+      category = Category.create!(name: "Help-desk #{i}")
+       job = Job.create!(title: "Sales manager#{i + 3}",
+                         location: "New Mexico",
+                         category: category,
+                         company: company,
+                         description: "A simple job for a simple person.")
+    end
+    expect(Company.last).to be_premium
+    visit root_path
+    expect(page).to have_content "Premium!!!"
+  end
+
+  scenario "and doesn\'t see a premium company featured" do
+    company = Company.create!(name: "McDonalds",
+                             location: "Arizona",
+                             email: "mc@donald.com",
+                             phone: "1-123-859-6544")
+    3.times do |i|
+      category = Category.create!(name: "Help-desk #{i}")
+       job = Job.create!(title: "Sales manager#{i + 3}",
+                         location: "New Mexico",
+                         category: category,
+                         company: company,
+                         description: "A simple job for a simple person.")
+    end
+    visit root_path
+    expect(page).not_to have_content "Premium!!!"
   end
 
 end

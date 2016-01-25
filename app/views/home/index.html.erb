@@ -18,7 +18,7 @@
 <aside class="links-side">
   <h4>Empresas</h4>
   <% @companies.each do |company| %>
-    <p><%= link_to company.name, company_path(company) %></p>
+    <p><%= "Premium!!! - " if company.premium? %><%= link_to company.name, company_path(company) %></p>
   <% end %>
 </aside>
 <aside class="links-side">
