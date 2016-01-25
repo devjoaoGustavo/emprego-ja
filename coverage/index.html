@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-25T16:49:31-02:00">2016-01-25T16:49:31-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-25T17:29:31-02:00">2016-01-25T17:29:31-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.85
+         2.0
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>8</b> files in total.
-    <b>46</b> relevant lines. 
-    <span class="green"><b>46</b> lines covered</span> and
+    <b>9</b> files in total.
+    <b>50</b> relevant lines. 
+    <span class="green"><b>50</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -61,6 +61,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#0fbdeac02de15a23b5a736bc249a41abc659dc7c" class="src_link" title="app/controllers/categories_controller.rb">app/controllers/categories_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#5f507d852071d9ffeb58d66b29d89c70dbe0aff5" class="src_link" title="app/controllers/companies_controller.rb">app/controllers/companies_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>20</td>
@@ -73,11 +83,11 @@
       <tr>
         <td class="strong"><a href="#d99336935406d95b6a67668559b12e33ecc1f9eb" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>4</td>
-        <td>4</td>
+        <td>7</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>5.0</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -143,15 +153,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.06
+         2.22
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
-    <b>4</b> files in total.
-    <b>37</b> relevant lines. 
-    <span class="green"><b>37</b> lines covered</span> and
+    <b>5</b> files in total.
+    <b>41</b> relevant lines. 
+    <span class="green"><b>41</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -179,6 +189,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#0fbdeac02de15a23b5a736bc249a41abc659dc7c" class="src_link" title="app/controllers/categories_controller.rb">app/controllers/categories_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#5f507d852071d9ffeb58d66b29d89c70dbe0aff5" class="src_link" title="app/controllers/companies_controller.rb">app/controllers/companies_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>20</td>
@@ -191,11 +211,11 @@
       <tr>
         <td class="strong"><a href="#d99336935406d95b6a67668559b12e33ecc1f9eb" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>4</td>
-        <td>4</td>
+        <td>7</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>5.0</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -459,6 +479,54 @@
   </pre>
 </div>
       
+        <div class="source_table" id="0fbdeac02de15a23b5a736bc249a41abc659dc7c">
+  <div class="header">
+    <h3>app/controllers/categories_controller.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class CategoriesController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def show</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @category = Category.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="5f507d852071d9ffeb58d66b29d89c70dbe0aff5">
   <div class="header">
     <h3>app/controllers/companies_controller.rb</h3>
@@ -602,8 +670,8 @@
     <h3>app/controllers/home_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -623,25 +691,31 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="3">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="3">
+          <span class="hits">10</span>
           
           <code class="ruby">    @jobs = Job.all</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="4">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="4">
+          <span class="hits">10</span>
           
           <code class="ruby">    @companies = Company.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="10" data-linenumber="5">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    @categories = Category.all</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>

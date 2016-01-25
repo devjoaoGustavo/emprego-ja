@@ -1,0 +1,13 @@
+<h2><%= @category.name %></h2>
+<hr>
+<h4>Vagas em aberto para a categoria <%= @category.name %></h4>
+<div class="jobs">
+  <% @category.jobs.each do |job| %>
+    <div class="job">
+      <%= job.title %>
+      <%= job.location %>
+      <%= job.company.name %>
+      <%= link_to 'Ver mais', job_path(job) %>
+    </div>
+  <% end %>
+</div>

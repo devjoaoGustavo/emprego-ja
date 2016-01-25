@@ -13,9 +13,15 @@
   <%= link_to 'Nova Vaga', new_job_path %>
   <%= link_to 'Nova Empresa', new_company_path %>
 </div>
-<aside class="companies">
+<aside class="links-side">
   <h4>Empresas</h4>
   <% @companies.each do |company| %>
     <p><%= link_to company.name, company_path(company) %></p>
+  <% end %>
+</aside>
+<aside class="links-side">
+  <h4>Categorias</h4>
+  <% @categories.each do |category| %>
+    <p><%= link_to category.name, category_path(category) %></p>
   <% end %>
 </aside>
