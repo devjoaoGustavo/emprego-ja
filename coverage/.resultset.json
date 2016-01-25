@@ -5,12 +5,18 @@
         1,
         null
       ],
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/category.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/home_controller.rb": [
         1,
         1,
-        13,
-        13,
-        13,
+        15,
+        15,
+        15,
         null,
         null
       ],
@@ -34,9 +40,31 @@
         1,
         null
       ],
-      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/category.rb": [
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/categories_controller.rb": [
         1,
         1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/companies_controller.rb": [
@@ -119,15 +147,8 @@
         5,
         null,
         null
-      ],
-      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/categories_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
       ]
     },
-    "timestamp": 1453753473
+    "timestamp": 1453756295
   }
 }

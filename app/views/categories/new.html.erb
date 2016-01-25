@@ -1,0 +1,11 @@
+<h2>Nova Categoria</h2>
+<hr>
+<span class="response"><%= flash[:error] %></span>
+<div class="form">
+  <%= form_for(@category) do |f| %>
+    <p><%= f.label :name %><br>
+    <%= f.text_field :name %></p>
+    <%= f.submit 'Criar Categoria' %>
+  <% end %>
+</div>
+<%= link_to 'Voltar', root_path %>
