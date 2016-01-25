@@ -2,6 +2,7 @@
   <% @jobs.each do |job| %>
     <div class="job">
       <p><b>Título:</b> <%= job.title %></p>
+      <p><b>Category:</b> <%= job.category.name %></p>
       <p><b>Localização:</b> <%= job.location %></p>
       <p><b>Empresa:</b> <%= job.company.name %></p>
       <%= link_to 'Ver mais', job_path(job) %>

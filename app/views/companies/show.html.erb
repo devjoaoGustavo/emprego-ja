@@ -17,7 +17,7 @@
   <div class="job">
     <%= job.title %>
     <%= job.location %>
-    <%= job.category %>
+    <%= job.category.name %>
     <%= link_to 'Ver mais', job_path(job) %>
   </div>
   <% end %>

@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
   belongs_to :company
-  validates :title, :category, :location, :company_id, :description, presence: true
+  belongs_to :category
+  validates :title, :category_id, :location, :company_id, :description, presence: true
 end
