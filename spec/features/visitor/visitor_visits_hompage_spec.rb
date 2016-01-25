@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'Visitor visits homepage' do
+  include ActiveSupport::Testing::TimeHelpers
 
   scenario 'successfully' do
     visit root_path
@@ -39,6 +40,43 @@ feature 'Visitor visits homepage' do
     visit root_path
     click_on 'Ver mais'
     expect(current_path).to eq job_path(job)
+  end
+
+  scenario 'and sees recents jobs featured' do
+    travel_to 3.days.ago do
+      category = Category.create!(name: "sales")
+      company = Company.create!(name: "McDonalds",
+                               location: "Arizona",
+                               email: "mc@donald.com",
+                               phone: "1-548-859-6544")
+      job = Job.create!(title: "Sales manager",
+                        location: "New Mexico",
+                        category: category,
+                        company: company,
+                        description: "A simple job for a simple person.")
+    end
+
+    expect(Job.last).to be_recent
+
+    visit root_path
+    expect(page).to have_content "Nova Vaga!!!"
+  end
+
+  scenario 'and doesn\'t see old jobs featured' do
+    travel_to 6.days.ago do
+      category = Category.create!(name: "sales")
+      company = Company.create!(name: "McDonalds",
+                               location: "Arizona",
+                               email: "mc@donald.com",
+                               phone: "1-548-859-6544")
+      job = Job.create!(title: "Sales manager",
+                        location: "New Mexico",
+                        category: category,
+                        company: company,
+                        description: "A simple job for a simple person.")
+    end
+    visit root_path
+    expect(page).not_to have_content "Nova Vaga!!!"
   end
 
 end

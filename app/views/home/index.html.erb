@@ -1,6 +1,7 @@
 <div class="jobs">
   <% @jobs.each do |job| %>
     <div class="job">
+      <span class="featured"><%= "Nova Vaga!!!" if job.recent? %></span>
       <p><b>Título:</b> <%= job.title %></p>
       <p><b>Category:</b> <%= job.category.name %></p>
       <p><b>Localização:</b> <%= job.location %></p>
