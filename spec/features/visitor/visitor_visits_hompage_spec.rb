@@ -8,12 +8,14 @@ feature 'Visitor visits hompage' do
   end
 
   scenario 'and sees all jobs' do
-    company = Company.create(name: "Xerox",
+    company = Company.create!(name: "Xerox",
                              location: "San Francisco",
                              email: "contact@xerox.com",
                              phone: "1-254-154-1549")
-    job = Job.create(title: "Developer Ruby Junior",
+    job = Job.create!(title: "Developer Ruby Junior",
                      location: "San Francisco",
+                     category: "Development",
+                     description: "Develop software solution for libraries",
                      company: company)
     visit root_path
     expect(page).to have_content job.title
@@ -22,12 +24,14 @@ feature 'Visitor visits hompage' do
   end
 
   scenario "and sees \'See More\' button" do
-    company = Company.create(name: "Xerox",
+    company = Company.create!(name: "Xerox",
                              location: "SanFracisco",
                              email: "dev@xerox.com",
                              phone: "1-254-154-2568")
-    job = Job.create(title: "Developer Ruby Junior",
+    job = Job.create!(title: "Developer Ruby Junior",
                      location: "San Francisco",
+                     category: "Development",
+                     description: "Develop software solution for libraries",
                      company: company)
     visit root_path
     click_on 'Ver mais'

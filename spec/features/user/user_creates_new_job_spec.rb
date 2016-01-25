@@ -29,6 +29,17 @@ feature 'User create a new job' do
     expect(page).to have_content job.description
   end
 
+  scenario 'unsuccessfully' do
+    company = Company.create(name: "Google",
+                   location: "São Paulo",
+                   email: "google@gmail.com",
+                   phone: "(11)98584-4656")
+    visit root_path
+    click_on 'Nova Vaga'
+    click_on 'Criar Vaga'
+    expect(page).to have_content "Erro! Nenhum do campos pode estar vazio."
+  end
+
   scenario 'and features it' do
     company = Company.create(name: "Americanas",
                    location: "Curitiba",
