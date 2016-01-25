@@ -18,5 +18,40 @@ feature 'User create a new job' do
 
     click_on 'Criar Vaga'
     expect(page).to have_content "Vaga criada com sucesso."
+
+    expect(page).to have_content job.title
+    expect(page).to have_content job.location
+    expect(page).to have_content job.company
+    expect(page).to have_content job.category
+    expect(page).to have_content job.description
+  end
+
+  scenario 'and features it' do
+    visit root_path
+    click_on 'Nova Vaga'
+    job = Job.new(title: "Sales manager",
+                  location: "Curitiba",
+                  category: "Sales",
+                  company: "Americanas",
+                  description: "Deal with the sales department in the south region of Brazil")
+
+    fill_in 'Title', with: job.title
+    fill_in 'Location', with: job.location
+    fill_in 'Company', with: job.company
+    fill_in 'Description', with: job.description
+    fill_in 'Category', with: job.category
+    check 'Featured'
+    click_on 'Criar Vaga'
+
+    expect(page).to have_content "Vaga criada com sucesso."
+
+    expect(page).to have_content job.title
+    expect(page).to have_content job.location
+    expect(page).to have_content job.company
+    expect(page).to have_content job.category
+    expect(page).to have_content job.description
+
+    expect(page).to have_content "Vaga em Destaque!"
+
   end
 end
