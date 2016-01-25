@@ -10,3 +10,15 @@
   <%= link_to 'Voltar', root_path %>
   <%= link_to 'Criar outra empresa', new_company_path %>
 </div>
+<hr>
+<h3>Vagas em aberto para <%= @company.name %></h3>
+<div class="jobs">
+  <%= @company.jobs.each do |job| %>
+  <div class="job">
+    <%= job.title %>
+    <%= job.location %>
+    <%= job.category %>
+    <%= link_to 'Ver mais', job_path(job) %>
+  </div>
+  <% end %>
+</div>

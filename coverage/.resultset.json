@@ -8,7 +8,8 @@
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/home_controller.rb": [
         1,
         1,
-        8,
+        9,
+        9,
         null,
         null
       ],
@@ -25,6 +26,11 @@
         1,
         null
       ],
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/company.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/companies_controller.rb": [
         1,
         1,
@@ -32,7 +38,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -45,11 +51,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/company.rb": [
-        1,
-        1,
         null
       ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/jobs_controller.rb": [
@@ -87,6 +88,6 @@
         null
       ]
     },
-    "timestamp": 1453742404
+    "timestamp": 1453745777
   }
 }
