@@ -39,7 +39,7 @@ feature 'User create a new job' do
     visit root_path
     click_on 'Nova Vaga'
     click_on 'Criar Vaga'
-    expect(page).to have_content "Erro! Nenhum do campos pode estar vazio."
+    expect(page).to have_content "Erro! Nenhum dos campos pode estar vazio."
   end
 
   scenario 'and features it' do
