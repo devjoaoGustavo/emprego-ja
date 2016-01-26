@@ -7,15 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>Emprego Já</h1>
-  <nav class="menu-links">
-    <% if current_user %>
-      <%= link_to 'Sair', logout_path %>
-    <% else %>
-      <%= link_to 'Registrar-se', signup_path %>
-      <%= link_to 'Entrar', login_path %>
-    <% end %>
-  </nav>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+      <%= link_to 'Emprego Já', root_path, class: "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Home', root_path %></li>
+        <% if current_user %>
+          <li><%= link_to 'Nova Vaga', new_job_path %></li>
+          <li><%= link_to 'Nova Empresa', new_company_path %></li>
+          <li><%= link_to 'Nova Categoria', new_category_path %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li><%= link_to 'Sair', logout_path %></li>
+        <% else %>
+        <li><%= link_to 'Registrar-se', signup_path %></li>
+        <li><%= link_to 'Entrar', login_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
 
 <%= yield %>

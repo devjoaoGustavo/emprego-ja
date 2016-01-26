@@ -1,23 +1,21 @@
 <span class="response"><%= notice %></span>
-<div class="jobs">
+
+
+<div class="row">
   <% @jobs.each do |job| %>
-    <div class="job">
-      <span class="featured"><%= "Nova Vaga!!!" if job.recent? %></span>
-      <p><b>Título:</b> <%= job.title %></p>
-      <p><b>Category:</b> <%= job.category.name %></p>
-      <p><b>Localização:</b> <%= job.location %></p>
-      <p><b>Empresa:</b> <%= job.company.name %></p>
-      <%= link_to 'Ver mais', job_path(job) %>
-    </div>
+  <div class="col-lg-4">
+    <span class="featured"><%= "Nova Vaga!!!" if job.recent? %></span>
+    <p class="text-danger"><b>Título:</b> <%= job.title %><br>
+    <b>Category:</b> <%= job.category.name %><br>
+    <b>Localização:</b> <%= job.location %><br>
+    <b>Empresa:</b> <%= job.company.name %></p>
+    <%= link_to 'Ver mais', job_path(job), class: "btn btn-primary" %>
+  </div>
   <% end %>
 </div>
-<% if current_user %>
-<div class="links">
-  <%= link_to 'Nova Vaga', new_job_path %>
-  <%= link_to 'Nova Empresa', new_company_path %>
-  <%= link_to 'Nova Categoria', new_category_path %>
+
+<div class="jobs">
 </div>
-<% end %>
 <aside class="links-side">
   <h4>Empresas</h4>
   <% @companies.each do |company| %>

@@ -1,23 +1,26 @@
-<h2><%= @company.name %></h2>
-<div class="logo">
-  <%= image_tag @company.logo_url %>
-</div>
-<hr>
 <span class="response"><%= notice %></span>
-<div class="company-details">
-  <p><b>Localização: </b><%= @company.location %></p>
-  <p><b>E-mail: </b><%= @company.email %></p>
-  <p><b>Telefone: </b><%= @company.phone %></p>
-</div>
-<div class="links">
-  <%= link_to 'Voltar', root_path %>
-  <%= link_to 'Editar', edit_company_path %>
-  <%= link_to 'Criar outra empresa', new_company_path %>
+<div class="jumbotron">
+  <%= image_tag @company.logo_url, id: "logo-company" %>
+  <div class="container">
+    <h1><%= @company.name %></h1>
+    <ul>
+      <li><b>Localização: </b><%= @company.location %></li>
+      <li><b>E-mail: </b><%= @company.email %></li>
+      <li><b>Telefone: </b><%= @company.phone %></li>
+    </ul>
+    <p>
+      <%= link_to 'Voltar', root_path, class: "btn btn-primary btn-lg" %>
+      <% if current_user %>
+      <%= link_to 'Editar', edit_company_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to 'Criar outra empresa', new_company_path, class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </p>
+  </div>
 </div>
 <hr>
 <h3>Vagas em aberto para <%= @company.name %></h3>
 <div class="jobs">
-  <%= @company.jobs.each do |job| %>
+  <% @company.jobs.each do |job| %>
   <div class="job">
     <%= job.title %>
     <%= job.location %>

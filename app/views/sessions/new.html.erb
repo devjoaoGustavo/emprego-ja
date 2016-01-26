@@ -1,13 +1,14 @@
-<h2>Log-in</h2>
 <hr>
 <span class="response"><%= notice %></span>
 <span class="error"><%= flash[:error] %></span>
-<div class="login">
-  <%= form_tag sessions_path do %>
+
+<div class="container">
+  <%= form_tag sessions_path, class: "form-signin" do %>
+    <h2 class="form-signin-heading">Log-in</h2>
     <p><%= label_tag :email %><br>
-    <%= email_field_tag :email, params[:email] %></p>
+    <%= email_field_tag :email, params[:email], class: "form-control" %></p>
     <p><%= label_tag :password %><br>
-    <%= password_field_tag :password, nil %></p>
-    <%= submit_tag 'Acessar' %>
+    <%= password_field_tag :password, nil, class: "form-control" %></p>
+    <%= submit_tag 'Acessar', class: "btn btn-lg btn-primary btn-block" %>
   <% end %>
 </div>

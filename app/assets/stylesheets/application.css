@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+#logo-company {
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+}
