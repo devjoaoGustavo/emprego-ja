@@ -1,3 +1,4 @@
+<span class="response"><%= notice %></span>
 <div class="jobs">
   <% @jobs.each do |job| %>
     <div class="job">
@@ -10,11 +11,13 @@
     </div>
   <% end %>
 </div>
+<% if current_user %>
 <div class="links">
   <%= link_to 'Nova Vaga', new_job_path %>
   <%= link_to 'Nova Empresa', new_company_path %>
   <%= link_to 'Nova Categoria', new_category_path %>
 </div>
+<% end %>
 <aside class="links-side">
   <h4>Empresas</h4>
   <% @companies.each do |company| %>

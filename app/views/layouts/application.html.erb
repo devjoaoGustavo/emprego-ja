@@ -6,8 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<h1>Emprego Já</h1>
 <body>
+  <h1>Emprego Já</h1>
+  <nav class="menu-links">
+    <% if current_user %>
+      <%= link_to 'Sair', logout_path %>
+    <% else %>
+      <%= link_to 'Registrar-se', signup_path %>
+      <%= link_to 'Entrar', login_path %>
+    <% end %>
+  </nav>
+
+
 <%= yield %>
 
 </body>

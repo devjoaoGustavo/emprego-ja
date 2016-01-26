@@ -11,12 +11,31 @@
         1,
         null
       ],
-      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/home_controller.rb": [
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/user.rb": [
         1,
         1,
-        22,
-        22,
-        22,
+        1,
+        null
+      ],
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        8,
+        8,
+        8,
+        8,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -25,6 +44,24 @@
         null,
         null,
         1,
+        null,
+        1,
+        null,
+        1,
+        101,
+        36,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/home_controller.rb": [
+        1,
+        1,
+        29,
+        29,
+        29,
+        null,
         null
       ],
       "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/models/job.rb": [
@@ -42,7 +79,7 @@
         null,
         null,
         1,
-        22,
+        29,
         null,
         null
       ],
@@ -179,8 +216,31 @@
         5,
         null,
         null
+      ],
+      "/home/joao/workspace/campuscode/ruby/time_jan_16/emprego-ja/app/controllers/users_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
       ]
     },
-    "timestamp": 1453761977
+    "timestamp": 1453775896
   }
 }
