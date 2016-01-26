@@ -19,7 +19,7 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :development do
+group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'web-console', '~> 2.0'
