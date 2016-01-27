@@ -1,5 +1,13 @@
-<h2><%= @category.name %></h2>
+<div class="jumbotron">
+  <div class="container">
+    <h2><%= @category.name %></h2>
+  </div>
+</div>
+
+
 <hr>
+
+
 <h4>Vagas em aberto para a categoria <%= @category.name %></h4>
 <div class="jobs">
   <% @category.jobs.each do |job| %>

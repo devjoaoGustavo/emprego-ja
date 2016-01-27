@@ -1,19 +1,30 @@
 <span class="response"><%= flash[:error] %></span>
-<div class="form">
+<div class="container">
   <%= form_for(@job) do |f| %>
-    <p><%= f.label :title %><br>
-    <%= f.text_field :title %></p>
-    <p><%= f.label :company_id %><br>
-    <%= f.collection_select :company_id, @companies, :id, :name %></p>
-    <p><%= f.label :location %><br>
-    <%= f.text_field :location %></p>
-    <p><%= f.label :category_id %><br>
-    <%= f.collection_select :category_id, @categories, :id, :name %></p>
-    <p><%= f.label :description %><br>
-    <%= f.text_area :description %></p>
-    <p><%= f.label :featured %>
-    <%= f.check_box :featured %></p>
-    <%= f.submit type %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location %>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :company_id %>
+      <%= f.collection_select :company_id, @companies, :id, :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, @categories, :id, :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <div class="checkbox">
+      <%= f.label :featured %>
+      <%= f.check_box :featured %>
+    </div>
+    <%= f.submit type, class: "btn btn-success" %>
   <% end %>
 </div>
-<%= link_to 'Voltar', root_path %>
