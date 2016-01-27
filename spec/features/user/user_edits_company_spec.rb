@@ -8,11 +8,8 @@ feature 'User edits company' do
                              email: "loc@web.com.br",
                              phone: "(11)4854-4684")
 
-    user = User.create!(name: "Joaquim", email: "jo@quim.com", password: "12345", password_confirmation: "12345")
-    visit login_path
-    fill_in 'Email', with: user.name
-    fill_in 'Password', with: user.password
-    click_on 'Acessar'
+    user = user_signup
+    user_signin user.email,user.password
 
     click_on 'Locaweb'
     click_on 'Editar'
@@ -31,7 +28,9 @@ feature 'User edits company' do
                              location: "São Paulo",
                              email: "loc@web.com.br",
                              phone: "(11)4854-4684")
-    visit root_path
+    user = user_signup
+    user_signin user.email,user.password
+
     click_on 'Locaweb'
     click_on 'Editar'
 

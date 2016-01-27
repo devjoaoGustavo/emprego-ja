@@ -1,17 +1,26 @@
 <span class="response"><%= flash[:error] %></span>
 <div class="form">
   <%= form_for(@company) do |f| %>
-    <p><%= f.label :name %><br>
-    <%= f.text_field :name %></p>
-    <p><%= f.label :location %><br>
-    <%= f.text_field :location %></p>
-    <p><%= f.label :email %><br>
-    <%= f.text_field :email %></p>
-    <p><%= f.label :phone %><br>
-    <%= f.text_field :phone %></p>
-    <p><%= f.label :logo %><br>
-    <%= f.file_field :logo %></p>
-    <%= f.submit type %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+    <div class="form-group">
+      <%= f.label :logo %>
+      <%= f.file_field :logo %>
+    </div>
+    <%= f.submit type, class:"btn btn-success" %>
   <% end %>
 </div>
-<%= link_to 'Voltar', root_path %>

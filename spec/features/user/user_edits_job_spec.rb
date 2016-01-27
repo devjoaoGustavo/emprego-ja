@@ -13,7 +13,10 @@ feature 'User edits job' do
                       company: company,
                       category: category,
                       description: "Junior developer with at least a personal project")
-    visit root_path
+
+    user = user_signup
+    user_signin user.email,user.password
+
     click_on 'Ver mais'
     click_on 'Editar'
 
@@ -38,7 +41,10 @@ feature 'User edits job' do
                       company: company,
                       category: category,
                       description: "Junior developer with at least a personal project")
-    visit root_path
+
+    user = user_signup
+    user_signin user.email,user.password
+
     click_on 'Ver mais'
     click_on 'Editar'
 

@@ -3,14 +3,8 @@ require 'rails_helper'
 feature 'User create a new job' do
   scenario 'succefully' do
 
-    user = User.create!(name: "João",
-                    email: "dev.joaogustavo@gmail.com",
-                    password: "senha",
-                    password_confirmation: "senha")
-    visit login_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: "senha"
-    click_on 'Acessar'
+    user = user_signup
+    user_signin user.email,user.password
 
     category = Category.create(name: "Help desk")
     company = Company.create(name: "Google",
@@ -70,7 +64,7 @@ feature 'User create a new job' do
     fill_in 'Email', with: user.email
     fill_in 'Password', with: "senha"
     click_on 'Acessar'
-    
+
     category = Category.create(name: "Sales")
     company = Company.create(name: "Americanas",
                    location: "Curitiba",

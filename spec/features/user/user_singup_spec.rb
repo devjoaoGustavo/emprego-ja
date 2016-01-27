@@ -2,9 +2,8 @@ require 'rails_helper'
 
 feature "User is created" do
   scenario 'succefully' do
-    user = User.new(name: "João",
-                    email: "dev.joaogustavo@gmail.com",
-                    password: "senha")
+    user = new_user
+
     visit root_path
     click_on 'Registrar-se'
 
@@ -18,14 +17,12 @@ feature "User is created" do
   end
 
   scenario 'Unsuccessfully' do
-    user = User.new(name: "João",
-                    email: "",
-                    password: "")
+    user = new_user
     visit root_path
     click_on 'Registrar-se'
 
     fill_in 'Name', with: user.name
-    fill_in 'Email', with: user.email
+    fill_in 'Email', with: ""
     fill_in 'Password', with: user.password
     fill_in 'Password confirmation', with: user.password
     click_on 'Criar Usuário'
@@ -47,6 +44,4 @@ feature "User is created" do
     click_on 'Sair'
     expect(page).to have_content "Log-out realizado com sucesso."
   end
-
-
 end

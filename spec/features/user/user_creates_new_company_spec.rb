@@ -2,14 +2,8 @@ require 'rails_helper'
 
 feature "User creates a new company" do
   scenario 'successfully' do
-    user = User.create!(name: "João",
-                    email: "dev.joaogustavo@gmail.com",
-                    password: "senha",
-                    password_confirmation: "senha")
-    visit login_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: "senha"
-    click_on 'Acessar'
+    user = user_signup
+    user_signin user.email,user.password
 
     click_on 'Nova Empresa'
 
@@ -33,14 +27,8 @@ feature "User creates a new company" do
   end
 
   scenario 'unsuccessfully' do
-    user = User.create!(name: "João",
-                    email: "dev.joaogustavo@gmail.com",
-                    password: "senha",
-                    password_confirmation: "senha")
-    visit login_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: "senha"
-    click_on 'Acessar'
+    user = user_signup
+    user_signin user.email,user.password
 
     click_on 'Nova Empresa'
     click_on 'Criar empresa'
