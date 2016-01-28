@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   before_action :set_companies, only: [:new, :create, :edit, :update]
   before_action :set_categories, only: [:new, :create, :edit, :update]
   before_action :set_job, only: [:edit, :show, :update]
+  before_action :authenticate_user!, except: :show
 
   def show
   end
