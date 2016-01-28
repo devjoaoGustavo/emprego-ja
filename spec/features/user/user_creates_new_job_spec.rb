@@ -35,14 +35,13 @@ feature 'User create a new job' do
   end
 
   scenario 'unsuccessfully' do
-    user = User.create!(name: "João",
-                    email: "dev.joaogustavo@gmail.com",
-                    password: "senha",
-                    password_confirmation: "senha")
-    visit login_path
+    user = User.create!(email: "dev.joaogustavo@gmail.com",
+                    password: "12345678",
+                    password_confirmation: "12345678")
+    visit new_user_session_path
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: "senha"
-    click_on 'Acessar'
+    fill_in 'Password', with: user.password
+    click_on 'Log in'
 
     Category.create(name: "Development")
     Company.create(name: "Google",
@@ -56,14 +55,13 @@ feature 'User create a new job' do
   end
 
   scenario 'and features it' do
-    user = User.create!(name: "João",
-                    email: "dev.joaogustavo@gmail.com",
-                    password: "senha",
-                    password_confirmation: "senha")
-    visit login_path
+    user = User.create!(email: "dev.joaogustavo@gmail.com",
+                    password: "12345678",
+                    password_confirmation: "12345678")
+    visit new_user_session_path
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: "senha"
-    click_on 'Acessar'
+    fill_in 'Password', with: user.password
+    click_on 'Log in'
 
     category = Category.create(name: "Sales")
     company = Company.create(name: "Americanas",

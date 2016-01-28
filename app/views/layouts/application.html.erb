@@ -18,9 +18,9 @@
           <li><%= link_to 'Nova Categoria', new_category_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Sair', logout_path %></li>
-        <li><%= link_to 'Registrar-se', signup_path %></li>
-        <li><%= link_to 'Entrar', login_path %></li>
+        <li><%= link_to 'Sair', destroy_user_session_path, method: "delete" %></li>
+        <li><%= link_to 'Registrar-se', new_user_registration_path %></li>
+        <li><%= link_to 'Entrar', new_user_session_path %></li>
       </ul>
     </div>
   </div>
