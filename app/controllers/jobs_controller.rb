@@ -15,22 +15,13 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(job_params)
-    if @job.save
-      redirect_to @job, notice: "Vaga criada com sucesso."
-    else
-      flash[:error] = "Erro! Nenhum dos campos pode estar vazio."
-      render :new
-    end
+    @job = Job.create(job_params)
+    respond_with @job
   end
 
   def update
-    if @job.update(job_params)
-      redirect_to @job, notice: "Vaga alterada com sucesso."
-    else
-      flash[:error] = "Erro! Nenhum dos campos pode estar vazio."
-      render :edit
-    end
+    @job.update(job_params)
+    respond_with @job
   end
 
   private

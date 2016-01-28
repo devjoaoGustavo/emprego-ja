@@ -24,7 +24,7 @@ feature 'User edits job' do
     fill_in 'Location', with: 'Campinas'
     click_on 'Salvar Alterações'
 
-    expect(page).to have_content "Vaga alterada com sucesso."
+    expect(page).to have_content "Job was successfully updated"
     expect(page).to have_content category2.name
     expect(page).to have_content 'Campinas'
   end
@@ -51,6 +51,6 @@ feature 'User edits job' do
     fill_in 'Title', with: ""
     click_on 'Salvar Alterações'
 
-    expect(page).to have_content "Erro! Nenhum dos campos pode estar vazio."
+    expect(page).to have_content "Title can\'t be blank"
   end
 end

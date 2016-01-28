@@ -18,3 +18,11 @@
   height: 100px;
   margin-left: 100px;
 }
+
+.field-errors{
+  color: red;
+}
+.featured{
+  color: blue;
+  font-weight: bold;
+}

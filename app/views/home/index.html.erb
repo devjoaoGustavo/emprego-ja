@@ -1,30 +1,36 @@
-<span class="response"><%= notice %></span>
+<div class="container-fluid">
+  <div class="col-sm-2">
+    <ul class="nav nav-stacked">
+      <li class="nav-header">
+        <a data-target="#companyMenu" data-toggle="collapse" href="#">Empresas</a>
+        <ul id="companyMenu" class="nav nav-stacked collapse in">
+          <% @companies.each do |company| %>
+          <li><%= "Premium!!! - " if company.premium? %><%= link_to company.name, company_path(company) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <hr>
+      <li class="nav-header">
+        <a data-target="#categoryMenu" data-toggle="collapse" href="#">Categorias</a>
+        <ul id="categoryMenu" class="nav nav-stacked collapse in">
+          <% @categories.each do |category| %>
+          <li><%= link_to category.name, category_path(category) %></li>
+          <% end %>
+        </ul>
+      </li>
 
-
-<div class="row">
-  <% @jobs.each do |job| %>
-  <div class="col-lg-4">
-    <span class="featured"><%= "Nova Vaga!!!" if job.recent? %></span>
-    <p class="text-danger"><b>Título:</b> <%= job.title %><br>
-    <b>Category:</b> <%= job.category.name %><br>
-    <b>Localização:</b> <%= job.location %><br>
-    <b>Empresa:</b> <%= job.company.name %></p>
-    <%= link_to 'Ver mais', job_path(job), class: "btn btn-primary" %>
+    </ul>
   </div>
-  <% end %>
+  <div class="col-sm-10">
+    <% @jobs.each do |job| %>
+      <div class="col-sm-5 well">
+        <h4><%= job.title %></h4>
+        <span class="featured"><%= "Nova Vaga!!!" if job.recent? %></span>
+        <p><b>Category:</b> <%= job.category.name %><br>
+        <b>Localização:</b> <%= job.location %><br>
+        <b>Empresa:</b> <%= job.company.name %></p>
+        <%= link_to 'Ver mais', job_path(job), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<div class="jobs">
-</div>
-<aside class="links-side">
-  <h4>Empresas</h4>
-  <% @companies.each do |company| %>
-    <p><%= "Premium!!! - " if company.premium? %><%= link_to company.name, company_path(company) %></p>
-  <% end %>
-</aside>
-<aside class="links-side">
-  <h4>Categorias</h4>
-  <% @categories.each do |category| %>
-    <p><%= link_to category.name, category_path(category) %></p>
-  <% end %>
-</aside>

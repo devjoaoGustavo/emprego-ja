@@ -24,7 +24,7 @@ feature 'User create a new job' do
     fill_in 'Description', with: job.description
 
     click_on 'Criar Vaga'
-    expect(page).to have_content "Vaga criada com sucesso."
+    expect(page).to have_content "Job was successfully created"
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
@@ -51,7 +51,7 @@ feature 'User create a new job' do
     visit root_path
     click_on 'Nova Vaga'
     click_on 'Criar Vaga'
-    expect(page).to have_content "Erro! Nenhum dos campos pode estar vazio."
+    expect(page).to have_content "Title can\'t be blank"
   end
 
   scenario 'and features it' do
@@ -83,7 +83,7 @@ feature 'User create a new job' do
     check 'Featured'
     click_on 'Criar Vaga'
 
-    expect(page).to have_content "Vaga criada com sucesso."
+    expect(page).to have_content "Job was successfully created"
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location

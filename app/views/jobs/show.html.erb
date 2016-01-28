@@ -2,7 +2,6 @@
 <span class="featured-job"><%= "Vaga em Destaque!" if @job.featured %></span>
 <span class="expired-job"><%= "Vaga expirada!" if @job.expired? %></span>
 <hr>
-<span class="response"><%= notice %></span>
 <div class="job-details">
   <p><b>Localização: </b><%= @job.location %></p>
   <p><b>Empresa: </b><%= @job.company.name %></p>
