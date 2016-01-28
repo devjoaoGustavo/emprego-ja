@@ -2,7 +2,7 @@
   <div class="col-sm-2">
     <ul class="nav nav-stacked">
       <li class="nav-header">
-        <a data-target="#companyMenu" data-toggle="collapse" href="#">Empresas</a>
+        <a data-target="#companyMenu" data-toggle="collapse" href="#">Empresas >></a>
         <ul id="companyMenu" class="nav nav-stacked collapse in">
           <% @companies.each do |company| %>
           <li><%= "Premium!!! - " if company.premium? %><%= link_to company.name, company_path(company) %></li>
@@ -11,7 +11,7 @@
       </li>
       <hr>
       <li class="nav-header">
-        <a data-target="#categoryMenu" data-toggle="collapse" href="#">Categorias</a>
+        <a data-target="#categoryMenu" data-toggle="collapse" href="#">Categorias >></a>
         <ul id="categoryMenu" class="nav nav-stacked collapse in">
           <% @categories.each do |category| %>
           <li><%= link_to category.name, category_path(category) %></li>
