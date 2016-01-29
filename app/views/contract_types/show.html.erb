@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <div class="container">
+    <h2> <%= "Tipo de Contratação: #{@contract_type.name}" %>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <% @contract_type.jobs_valid.each do |job| %>
+    <div class="container">
+      <%= job.title %>
+      <%= job.company.name %>
+      <%= job.category.name %>
+      <%= job.location %>
+      <%= link_to 'Ver mais', job %>
+    </div>
+  <% end %>
+</div>

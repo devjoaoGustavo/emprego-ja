@@ -1,6 +1,7 @@
 class Job < ActiveRecord::Base
   belongs_to :company
   belongs_to :category
+  belongs_to :contract_type
   validates :title, :category_id, :location, :company_id, :description, presence: true
 
   def recent?

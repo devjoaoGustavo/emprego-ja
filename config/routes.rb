@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :jobs, only: [:show, :new, :create, :edit, :update]
   resources :companies, only: [:new, :create,:show, :edit, :update]
   resources :categories, only: [:show, :new, :create]
-  get '/signup' => 'users#new'
-  resources :users, only: [:create]
+  # get '/signup' => 'users#new'
+  # resources :users, only: [:create]
+  resources :contract_types, only: [:show]
 end
