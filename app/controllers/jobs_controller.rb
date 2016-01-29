@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_companies, only: [:new, :create, :edit, :update]
-  before_action :set_categories, only: [:new, :create, :edit, :update]
+  before_action :set_resources, only: [:new, :create, :edit, :update]
   before_action :set_job, only: [:edit, :show, :update]
   before_action :authenticate_user!, except: :show
 
@@ -26,12 +25,10 @@ class JobsController < ApplicationController
 
   private
 
-  def set_companies
+  def set_resources
     @companies = Company.all
-  end
-
-  def set_categories
     @categories = Category.all
+    @contract_types = ContractType.all
   end
 
   def set_job

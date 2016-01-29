@@ -19,3 +19,15 @@ def user_signin(email=nil,password=nil)
   fill_in 'Password', with: password
   click_on 'Log in'
 end
+
+def new_categories(num=1, name="Sales")
+  num.times do |n|
+    Category.create! name: "#{name} #{n+1}."
+  end
+end
+
+def new_contract_types(num=1, name="CLT")
+  num.times do |n|
+    ContractType.create! name: "#{name} #{n+1}."
+  end
+end

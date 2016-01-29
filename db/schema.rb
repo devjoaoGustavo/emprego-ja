@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128015040) do
+ActiveRecord::Schema.define(version: 20160129180444) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -29,19 +29,27 @@ ActiveRecord::Schema.define(version: 20160128015040) do
     t.string   "logo"
   end
 
+  create_table "contract_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.text     "description"
     t.boolean  "featured"
     t.integer  "company_id"
     t.integer  "category_id"
+    t.integer  "contract_type_id"
   end
 
   add_index "jobs", ["category_id"], name: "index_jobs_on_category_id"
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
+  add_index "jobs", ["contract_type_id"], name: "index_jobs_on_contract_type_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

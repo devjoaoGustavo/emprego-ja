@@ -18,6 +18,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'pry-byebug'
 end
 
 group :production do

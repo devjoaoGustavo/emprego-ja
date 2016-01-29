@@ -45,6 +45,15 @@
         <% end %>
       </div>
     </div>
+    <div class="form_group">
+      <%= f.label :contract_type_id %>
+      <%= f.collection_select :contract_type_id,@contract_types, :id, :name %>
+      <div class="field-errors">
+        <% @job.errors[:contract_type].each do |error| %>
+          <%= error %>
+        <% end %>
+      </div>
+    </div>
     <div class="checkbox">
       <%= f.label :featured %>
       <%= f.check_box :featured %>
