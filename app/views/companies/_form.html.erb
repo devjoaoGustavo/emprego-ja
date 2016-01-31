@@ -1,25 +1,39 @@
-<span class="response"><%= flash[:error] %></span>
 <div class="form">
   <%= form_for(@company) do |f| %>
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name %>
+      <% @company.errors[:name].each do |error| %>
+        <%= error %>
+      <% end %>
     </div>
     <div class="form-group">
       <%= f.label :location %>
       <%= f.text_field :location %>
+      <% @company.errors[:location].each do |error| %>
+        <%= error %>
+      <% end %>
     </div>
     <div class="form-group">
       <%= f.label :email %>
       <%= f.text_field :email %>
+      <% @company.errors[:email].each do |error| %>
+        <%= error %>
+      <% end %>
     </div>
     <div class="form-group">
       <%= f.label :phone %>
       <%= f.text_field :phone %>
+      <% @company.errors[:phone].each do |error| %>
+        <%= error %>
+      <% end %>
     </div>
     <div class="form-group">
       <%= f.label :logo %>
       <%= f.file_field :logo %>
+      <% @company.errors[:logo].each do |error| %>
+        <%= error %>
+      <% end %>
     </div>
     <%= f.submit type, class:"btn btn-success" %>
   <% end %>

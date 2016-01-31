@@ -22,7 +22,7 @@ feature "User creates a new company" do
     expect(page).to have_content company.location
     expect(page).to have_content company.email
     expect(page).to have_content company.phone
-    expect(page).to have_content "Empresa criada com sucesso."
+    expect(page).to have_content "Company was successfully created"
 
   end
 
@@ -32,6 +32,7 @@ feature "User creates a new company" do
 
     click_on 'Nova Empresa'
     click_on 'Criar empresa'
-    expect(page).to have_content "Erro! Nenhum dos campos pode ser vazio."
+
+    expect(page).to have_content "Name can't be blank"
   end
 end

@@ -9,25 +9,19 @@ class CompaniesController < ApplicationController
   end
 
   def edit
+    unless logged_user? @company.user
+      redirect_to @company, alert: "User can't edit this company"
+    end
   end
 
   def create
-    @company = Company.new(company_params)
-    if @company.save
-      redirect_to @company, notice: "Empresa criada com sucesso."
-    else
-      flash[:error] = "Erro! Nenhum dos campos pode ser vazio."
-      render :new
-    end
+    @company = current_user.companies.create(company_params)
+    respond_with @company
   end
 
   def update
-    if @company.update(company_params)
-      redirect_to @company, notice: "Empresa alterada com sucesso."
-    else
-      flash[:error] = "Erro! Nenhum dos campos pode ser vazio."
-      render :edit
-    end
+    @company.update(company_params)
+    respond_with @company
   end
 
   private
