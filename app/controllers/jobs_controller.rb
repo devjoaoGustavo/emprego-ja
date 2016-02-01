@@ -26,7 +26,7 @@ class JobsController < ApplicationController
   private
 
   def set_resources
-    @companies = Company.all
+    @companies = current_user.companies
     @categories = Category.all
     @contract_types = ContractType.all
   end

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'User inserts contract type in jobs' do
   scenario 'successfully' do
     user = user_signup
-    company = Company.create!(name: 'Locaweb',location: 'São Paulo',email: 'loc@web.com',phone: '11256489-9856')
+    company = Company.create!(name: 'Locaweb',location: 'São Paulo',email: 'loc@web.com',phone: '11256489-9856', user: user)
     new_categories 4,"Management"
     new_contract_types 7,"Freelancer"
     user_signin user.email,user.password

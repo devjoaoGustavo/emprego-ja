@@ -6,11 +6,12 @@ feature 'User create a new job' do
     user = user_signup
     user_signin user.email,user.password
 
-    category = Category.create(name: "Help desk")
-    company = Company.create(name: "Google",
+    category = Category.create!(name: "Help desk")
+    company = Company.create!(name: "Google",
                    location: "São Paulo",
                    email: "google@gmail.com",
-                   phone: "(11)98584-4656")
+                   phone: "(11)98584-4656",
+                   user: user)
     visit root_path
     click_on 'Nova Vaga'
     job = Job.new(title: "Customer support analist",
@@ -38,17 +39,16 @@ feature 'User create a new job' do
     user = User.create!(email: "dev.joaogustavo@gmail.com",
                     password: "12345678",
                     password_confirmation: "12345678")
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_on 'Log in'
 
-    Category.create(name: "Development")
-    Company.create(name: "Google",
+    Category.create!(name: "Development")
+    Company.create!(name: "Google",
                    location: "São Paulo",
                    email: "google@gmail.com",
-                   phone: "(11)98584-4656")
-    visit root_path
+                   phone: "(11)98584-4656",
+                   user: user)
+
+    user_signin user.email,user.password
+
     click_on 'Nova Vaga'
     click_on 'Criar Vaga'
     expect(page).to have_content "Title can\'t be blank"
@@ -58,17 +58,16 @@ feature 'User create a new job' do
     user = User.create!(email: "dev.joaogustavo@gmail.com",
                     password: "12345678",
                     password_confirmation: "12345678")
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_on 'Log in'
 
-    category = Category.create(name: "Sales")
-    company = Company.create(name: "Americanas",
+    category = Category.create!(name: "Sales")
+    company = Company.create!(name: "Americanas",
                    location: "Curitiba",
                    email: "sales@americanas.com.br",
-                   phone: "(45)56894-4684")
-    visit root_path
+                   phone: "(45)56894-4684",
+                   user: user)
+
+    user_signin user.email,user.password
+
     click_on 'Nova Vaga'
     job = Job.new(title: "Sales manager",
                   location: "Curitiba",
