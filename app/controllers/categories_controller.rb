@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, except: :show
+
   def show
     @category = Category.find(params[:id])
   end
@@ -9,13 +10,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
-    if @category.save
-      redirect_to @category, notice: "Categoria criada com sucesso."
-    else
-      flash[:error] = "Erro! Nome da categoria não pode ser vazio."
-      render :new
-    end
+    @category = Category.create(category_params)
+    respond_with @category
+  end
+
+  def update
+    @category.update(category_params)
+    respond_with @category
   end
 
   private

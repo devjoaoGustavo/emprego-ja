@@ -25,6 +25,6 @@ feature 'User creates new category' do
     fill_in 'Name', with: ""
     click_on 'Criar Categoria'
 
-    expect(page).to have_content "Erro! Nome da categoria não pode ser vazio."
+    expect(page).to have_content "Name can't be blank"
   end
 end

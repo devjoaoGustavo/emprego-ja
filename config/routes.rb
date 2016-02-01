@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :jobs, only: [:show, :new, :create, :edit, :update]
   resources :companies, only: [:show,:new, :create, :edit, :update]
-  resources :categories, only: [:show, :new, :create]
-  resources :contract_types, only: [:show]
+  resources :categories, only: [:show, :new, :create, :edit, :update]
+  resources :contract_types, only: [:show, :new, :create, :edit, :update]
 end

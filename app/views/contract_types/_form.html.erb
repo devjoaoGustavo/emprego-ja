@@ -1,0 +1,12 @@
+<div class="form-group">
+  <% form_for(@contract_type) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+    <div class="error">
+      <% @contract_type.errors[:name].each do |erro| %>
+      <%= error %>
+      <% end %>
+    </div>
+    <%= f.submit type %>
+  <% end %>
+</div>

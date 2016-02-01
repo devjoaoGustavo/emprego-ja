@@ -1,7 +1,7 @@
 <span class="response"><%= flash[:notice] %></span>
 <span class="response"><%= flash[:alert] %></span>
 <div class="jumbotron">
-  <%= image_tag @company.logo_url, id: "logo-company" %>
+  <%= image_tag @company.logo_url, alt: "logo!", id: "logo-company" %>
   <div class="container">
     <h1><%= @company.name %></h1>
     <ul>
