@@ -19,10 +19,10 @@ feature 'User uploads the company logo' do
     fill_in 'Location', with: company.location
     fill_in 'Email', with: company.email
     fill_in 'Phone', with: company.phone
-    attach_file 'Logo', '/home/joao/Imagens/logo.png'
+    attach_file 'Logo', 'http://res.cloudinary.com/devjoaogustavo/image/upload/v1454373982/sample.jpg'
     click_on 'Criar empresa'
 
-    expect(page).to have_css "img[src*='logo.png']"
+    expect(page).to have_css "img[src*='sample.jpg']"
 
   end
 end

@@ -21,8 +21,8 @@
       <hr>
 
       <li class="nav-header">
-        <a data-target="#categoryMenu" data-toggle="collapse" href="#">Tipo de contratação:</a>
-        <ul id="categoryMenu" class="nav nav-stacked collapse in">
+        <a data-target="#contractTypeMenu" data-toggle="collapse" href="#">Tipo de contratação:</a>
+        <ul id="contractTypeMenu" class="nav nav-stacked collapse in">
           <% @contract_types.each do |contract_type| %>
           <li><%= link_to contract_type.name, contract_type_path(contract_type) %></li>
           <% end %>

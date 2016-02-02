@@ -1,8 +1,8 @@
-<span class="response"><%= flash[:notice] %></span>
-<span class="response"><%= flash[:alert] %></span>
 <div class="jumbotron">
-  <%= image_tag @company.logo_url, alt: "logo!", id: "logo-company" %>
   <div class="container">
+    <% unless @company.logo_url.nil? %>
+      <%= image_tag @company.logo_url(:standard), alt: "logo!" %>
+    <% end %>
     <h1><%= @company.name %></h1>
     <ul>
       <li><b>Localização: </b><%= @company.location %></li>

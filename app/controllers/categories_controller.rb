@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
+  before_action :set_category, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: :show
 
   def show
-    @category = Category.find(params[:id])
+  end
+
+  def edit
   end
 
   def new
@@ -23,5 +26,9 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def set_category
+    @category = Category.find(params[:id])
   end
 end

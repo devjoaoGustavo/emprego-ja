@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: devjoaogustavo
+  api_key: '462647842575566'
+  api_secret: RJjNGpBCI_5_njm38Ry2wyE_HHo
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: devjoaogustavo
+  api_key: '462647842575566'
+  api_secret: RJjNGpBCI_5_njm38Ry2wyE_HHo
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: devjoaogustavo
+  api_key: '462647842575566'
+  api_secret: RJjNGpBCI_5_njm38Ry2wyE_HHo
+  enhance_image_tag: true
+  static_image_support: false
