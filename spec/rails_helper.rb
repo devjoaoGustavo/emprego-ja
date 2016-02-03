@@ -14,6 +14,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include FactoryGirl::Syntax::Methods
   config.use_transactional_fixtures = true
   config.backtrace_exclusion_patterns << /gems/
   config.infer_spec_type_from_file_location!

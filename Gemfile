@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'devise'
+gem 'responders'
+gem 'factory_girl_rails'
 
 group :development, :test do
   gem 'sqlite3'
