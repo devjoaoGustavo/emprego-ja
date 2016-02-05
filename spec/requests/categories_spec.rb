@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 describe 'Categories API' do
-
   it 'get the list of categories' do
     categories = create_list(:category, 10)
 
-    get "/api/categories"
+    get '/api/categories'
 
     expect(response).to be_success
     expect(JSON.parse(response.body)[0]['name']).to eq categories[0].name
@@ -26,7 +25,7 @@ describe 'Categories API' do
   it 'get all categories' do
     categories = create_list(:category, 10)
 
-    get "/api/categories"
+    get '/api/categories'
 
     expect(JSON.parse(response.body).count).to eq categories.count
     expect(JSON.parse(response.body)[0]['id']).to eq categories[0].id
@@ -38,6 +37,7 @@ describe 'Categories API' do
 
     get "/api/categories/#{category.id}"
 
-    expect(JSON.parse(response.body)['job_path']).to eq "/api/categories/#{category.id}/jobs"
+    expect(JSON.parse(response.body)['job_path'])
+      .to eq "/api/categories/#{category.id}/jobs"
   end
 end

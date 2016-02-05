@@ -4,8 +4,8 @@ FactoryGirl.define do
       "Locaweb #{n}"
     end
     location "São Paulo"
-    email "loc@web.com"
-    phone "112343-3454"
+    email 'loc@web.com'
+    phone '112343-3454'
     user
   end
 end

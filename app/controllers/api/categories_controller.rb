@@ -1,19 +1,21 @@
-class Api::CategoriesController < ApplicationController
-  before_action :set_category, only: :show
+module Api
+  class CategoriesController < ApplicationController
+    before_action :set_category, only: :show
 
-  def show
-    @categoryD = CategoryDecorator.new(@category)
-    respond_with @categoryD
-  end
+    def show
+      @category_decorator = CategoryDecorator.new(@category)
+      respond_with @category_decorator
+    end
 
-  def index
-    @categories = Category.all
-    respond_with @categories
-  end
+    def index
+      @categories = Category.all
+      respond_with @categories
+    end
 
-  private
+    private
 
-  def set_category
-    @category = Category.find(params[:id])
+    def set_category
+      @category = Category.find(params[:id])
+    end
   end
 end

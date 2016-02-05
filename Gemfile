@@ -22,6 +22,7 @@ group :development, :test do
   gem 'capybara'
   gem 'byebug'
   gem 'pry-byebug'
+  gem 'rubocop', require: false
 end
 
 group :production do

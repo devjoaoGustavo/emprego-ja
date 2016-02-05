@@ -1,19 +1,21 @@
-class Api::CompaniesController < ApplicationController
-  before_action :set_company, only: :show
+module Api
+  class CompaniesController < ApplicationController
+    before_action :set_company, only: :show
 
-  def show
-    @companyD = CompanyDecorator.new(@company)
-    respond_with @companyD
-  end
+    def show
+      @company_decorator = CompanyDecorator.new(@company)
+      respond_with @company_decorator
+    end
 
-  def index
-    @companies = Company.all
-    respond_with @companies
-  end
+    def index
+      @companies = Company.all
+      respond_with @companies
+    end
 
-  private
+    private
 
-  def set_company
-    @company = Company.find(params[:id])
+    def set_company
+      @company = Company.find(params[:id])
+    end
   end
 end

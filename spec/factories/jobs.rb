@@ -4,9 +4,10 @@ FactoryGirl.define do
       "Developer Ruby#{n}"
     end
     location "São Paulo"
-    description "Develops web applications for financial business"
+    description 'Develops web applications for financial business'
     category
     contract_type
     company
+    featured true
   end
 end

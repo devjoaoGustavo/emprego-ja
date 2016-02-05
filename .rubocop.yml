@@ -1,0 +1,15 @@
+Documentation:
+  Enabled: false
+Rails:
+  Enabled: true
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'spec/support/*'
+    - 'app/uploaders/*'

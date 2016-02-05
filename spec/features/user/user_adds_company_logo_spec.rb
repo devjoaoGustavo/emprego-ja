@@ -6,14 +6,14 @@ require 'rails_helper'
 #     user_signup
 #     user_signin
 #
-#     expect(page).to have_content "Nova Empresa"
+#     expect(page).to have_content 'Nova Empresa'
 #
 #     click_on 'Nova Empresa'
 #
-#     company = Company.new(name: "Locaweb",
-#                           location: "São Paulo",
-#                           email: "loca@web.com.br",
-#                           phone: "(11)562-9568")
+#     company = Company.new(name: 'Locaweb',
+#                           location: 'Sao Paulo',
+#                           email: 'loca@web.com.br',
+#                           phone: '(11)562-9568')
 #
 #     fill_in 'Name', with: company.name
 #     fill_in 'Location', with: company.location

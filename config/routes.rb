@@ -7,10 +7,16 @@ Rails.application.routes.draw do
   resources :contract_types, only: [:show, :new, :create, :edit, :update]
 
   namespace :api, defaults: { format: 'json' } do
-    resources :companies, only: [:show,:index] do
-      resources :jobs, only: :index
+    resources :companies, only: [:show, :index] do
+      member do
+        get 'jobs'
+      end
     end
-    resources :categories, only: [:show,:index]
-    resources :jobs, only: [:show,:index]
+    resources :categories, only: [:show, :index] do
+      member do
+        get 'jobs'
+      end
+    end
+    resources :jobs, only: [:show, :index]
   end
 end

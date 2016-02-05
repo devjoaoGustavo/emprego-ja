@@ -1,13 +1,13 @@
-class Api::JobsController < ApplicationController
+module Api
+  class JobsController < ApplicationController
+    def show
+      @job = Job.find(params[:id])
+      respond_with @job
+    end
 
-  def show
-    @job = Job.find(params[:id])
-    respond_with @job
+    def index
+      @jobs = Job.all
+      respond_with @jobs
+    end
   end
-
-  def index
-    @jobs = Job.all
-    respond_with @jobs
-  end
-
 end

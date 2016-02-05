@@ -14,15 +14,16 @@ describe 'Company API' do
   end
 
   it 'get a nonexistent company' do
-    company = create(:company)
+    create(:company)
 
-    expect { get "/api/companies/5" }.to raise_error(ActiveRecord::RecordNotFound)
+    expect { get '/api/companies/5' }
+      .to raise_error(ActiveRecord::RecordNotFound)
   end
 
   it 'get a list of companies' do
     companies = create_list(:company, 5)
 
-    get "/api/companies"
+    get '/api/companies'
 
     expect(response).to be_success
     expect(JSON.parse(response.body)[0]['name']).to eq companies[0].name
@@ -33,18 +34,17 @@ describe 'Company API' do
 
   it 'get all companies' do
     companies = create_list(:company, 10)
-
-    get "/api/companies"
-
+    get '/api/companies'
     expect(JSON.parse(response.body).count).to eq companies.count
   end
 
   it 'get the company jobs' do
     company = create(:company)
-    jobs = create_list(:job, 10, company: company)
+    create_list(:job, 10, company: company)
 
     get "/api/companies/#{company.id}"
 
-    expect(JSON.parse(response.body)['job_path']).to eq "/api/companies/#{company.id}/jobs"
+    expect(JSON.parse(response.body)['job_path'])
+      .to eq "/api/companies/#{company.id}/jobs"
   end
 end

@@ -6,11 +6,11 @@ class JobsController < ApplicationController
   def show
   end
 
-  def new
-    @job = Job.new
+  def edit
   end
 
-  def edit
+  def new
+    @job = Job.new
   end
 
   def create
@@ -36,6 +36,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :location, :description, :category_id, :company_id, :featured)
+    params.require(:job).permit(:title, :location, :description,
+                                :category_id, :company_id, :featured)
   end
 end

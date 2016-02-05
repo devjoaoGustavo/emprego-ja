@@ -1,9 +1,5 @@
-class CategoryDecorator < SimpleDelegator
-
-  def to_json(option)
-    JSON.parse(__getobj__.to_json)
-        .merge(job_path: "/#{option[:prefixes][0]}/#{__getobj__.id}/jobs")
-            .to_json
+class CategoryDecorator < JsonDecorator
+  def to_json(_option)
+    json.merge(job_path: jobs_api_category_path(model)).to_json
   end
-
 end
