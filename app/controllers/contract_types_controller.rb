@@ -12,16 +12,20 @@ class ContractTypesController < ApplicationController
   end
 
   def create
-    @contract_type = ContractType.create(params[:name])
+    @contract_type = ContractType.create!(contract_type_params)
     respond_with @contract_type
   end
 
   def update
-    @contract_type.update(params[:name])
+    @contract_type.update(contract_type_params)
     respond_with @contract_type
   end
 
   private
+
+  def contract_type_params
+    params.require(:contract_type).permit(:name)
+  end
 
   def set_contract_type
     @contract_type = ContractType.find(params[:id])

@@ -13,6 +13,9 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.after(:all) do
+    FileUtils.rm_rf(Dir["#{Rails.root}/public/uploads"]) if Rails.env.test?
+  end
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryGirl::Syntax::Methods
   config.include ActiveSupport::Testing::TimeHelpers

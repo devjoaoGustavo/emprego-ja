@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160131144714) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160131144714) do
     t.integer  "user_id"
   end
 
-  add_index "companies", ["user_id"], name: "index_companies_on_user_id"
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "contract_types", force: :cascade do |t|
     t.string   "name"
@@ -50,9 +53,9 @@ ActiveRecord::Schema.define(version: 20160131144714) do
     t.integer  "contract_type_id"
   end
 
-  add_index "jobs", ["category_id"], name: "index_jobs_on_category_id"
-  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
-  add_index "jobs", ["contract_type_id"], name: "index_jobs_on_contract_type_id"
+  add_index "jobs", ["category_id"], name: "index_jobs_on_category_id", using: :btree
+  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
+  add_index "jobs", ["contract_type_id"], name: "index_jobs_on_contract_type_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -69,7 +72,11 @@ ActiveRecord::Schema.define(version: 20160131144714) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "companies", "users"
+  add_foreign_key "jobs", "categories"
+  add_foreign_key "jobs", "companies"
+  add_foreign_key "jobs", "contract_types"
 end

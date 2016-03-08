@@ -1,9 +1,9 @@
 <div class="form-group">
-  <% form_for(@contract_type) do |f| %>
+  <%= form_for(@contract_type) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
     <div class="error">
-      <% @contract_type.errors[:name].each do |erro| %>
+      <% @contract_type.errors[:name].each do |error| %>
       <%= error %>
       <% end %>
     </div>
